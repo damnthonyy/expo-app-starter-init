@@ -1,9 +1,10 @@
-import { View, Text,StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
-export default function store() {
+export default function Store() {
     return(
         <View style={styles.container}>
-            <Text>store</Text>
+            <Text style={styles.title}>Store</Text>
+            <Text style={styles.subtitle}>Bienvenue dans notre boutique</Text>
         </View>
     )
 }
@@ -13,5 +14,16 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#f8fafc",
+    },
+    title: {
+        fontSize: 32,
+        fontWeight: "bold",
+        color: "#1e293b",
+        marginBottom: 8,
+    },
+    subtitle: {
+        fontSize: 16,
+        color: "#64748b",
     }
 })
