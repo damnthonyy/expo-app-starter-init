@@ -1,5 +1,6 @@
 import { View, Text } from "react-native";
 import BaseButton from "../../components/BaseButton";
+import { ChevronRightIcon } from "lucide-react-native";
 
 
 export default function Home() {
@@ -16,7 +17,13 @@ export default function Home() {
             <Text className="text-[16px] text-slate-500">
                 Bienvenue sur la page d'accueil.
             </Text>
-            <BaseButton variant="flashy" disabled={false} title="Se connecter" onPress={handlePress} />
+            <BaseButton 
+                variant="flashy" 
+                disabled={false} 
+                title="Se connecter" 
+                icon={<ChevronRightIcon size={24} color="black" />}
+                onPress={handlePress}
+            />
         </View>
     );
 }

@@ -1,10 +1,11 @@
 import React from 'react';
-import { TouchableOpacity, Text, TouchableOpacityProps } from 'react-native';
+import { TouchableOpacity, Text, TouchableOpacityProps, View } from 'react-native';
 
 // Props for the BaseButton component
 interface BaseButtonProps extends TouchableOpacityProps {
   variant?: 'primary' | 'secondary' | 'flashy';
-  title: string;
+  title?: string;
+  icon?: React.ReactNode;
   disabled?: boolean;
   onPress: () => void;
 }
@@ -13,6 +14,7 @@ interface BaseButtonProps extends TouchableOpacityProps {
 const BaseButton: React.FC<BaseButtonProps> = ({ 
   variant = 'primary', 
   title, 
+  icon,
   className = '',
   disabled = false,
   onPress,
@@ -39,9 +41,18 @@ const BaseButton: React.FC<BaseButtonProps> = ({
       onPress={onPress}
       {...props}
     >
-      <Text className={textClasses[variant]}>
-        {title}
-      </Text>
+      <View className="flex-row items-center justify-center gap-2">
+        {icon && (
+          <View className="flex items-center justify-center">
+            {icon}
+          </View>
+        )}
+        {title && (
+          <Text className={textClasses[variant]}>
+            {title}
+          </Text>
+        )}
+      </View>
     </TouchableOpacity>
   );
 };
