@@ -1,31 +1,22 @@
-import { View, Text, StyleSheet } from "react-native";
-
+import { View, Text } from "react-native";
+import BaseButton from "../../components/BaseButton";
 
 
 export default function Home() {
-    return(
-        <View className="flex-1 items-center justify-center bg-[#f8fafc] gap-4">
-            <Text className="text-[32px] font-bold text-[#1e293b]">Accueil</Text>
-            <Text className="text-[16px] text-[#64748b]">Bienvenue sur la page d'accueil.</Text>
-        </View>
-    )
-}
 
-/* const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#f8fafc",
-    },
-    title: {
-        fontSize: 32,
-        fontWeight: "bold",
-        color: "#1e293b",
-        marginBottom: 8,
-    },
-    subtitle: {
-        fontSize: 16,
-        color: "#64748b",
+    const handlePress = () => {
+        alert("Button pressed");
     }
-}) */
+
+    return (
+        <View className="flex-1 items-center justify-center bg-slate-50 gap-4">
+            <Text className="text-3xl font-bold text-slate-800 mb-2">
+                Accueil
+            </Text>
+            <Text className="text-[16px] text-slate-500">
+                Bienvenue sur la page d'accueil.
+            </Text>
+            <BaseButton variant="flashy" disabled={false} title="Se connecter" onPress={handlePress} />
+        </View>
+    );
+}
